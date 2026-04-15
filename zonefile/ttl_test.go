@@ -20,7 +20,7 @@ func TestParseTTL(t *testing.T) {
 		{"300", 300, true},
 		{"1s", 1, true},
 		{"1h30", 3630, true}, // trailing bare number = seconds
-		{"0", 0, false},      // zero not valid
+		{"0", 0, true},       // TTL=0 is valid (e.g. NSEC3PARAM)
 		{"", 0, false},
 		{"abc", 0, false},
 		{"1x", 0, false},

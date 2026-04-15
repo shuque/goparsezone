@@ -34,10 +34,7 @@ func ParseTTL(value string) (int, bool) {
 		for i := 0; i < len(lower); i++ {
 			n = n*10 + int(lower[i]-'0')
 		}
-		if n > 0 {
-			return n, true
-		}
-		return 0, false
+		return n, true
 	}
 
 	// Suffixed case
